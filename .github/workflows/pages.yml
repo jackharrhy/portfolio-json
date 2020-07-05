@@ -28,7 +28,7 @@ jobs:
           mkdir output
 
       - name: Build portfolio.json to output folder
-        run: crystal run src/cli.cr | jq > output/portfolio.json
+        run: sh ./build.sh
         env:
           PJ_GITHUB_USERNAME: jackharrhy
 
