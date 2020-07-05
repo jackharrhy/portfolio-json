@@ -4,7 +4,7 @@ require "json"
 class PortfolioJson::Github
   GITHUB_API_BASE = "https://api.github.com"
 
-  GITUB_TOKEN = ENV["PJ_GITHUB_TOKEN"]?
+  GITUB_TOKEN     = ENV["PJ_GITHUB_TOKEN"]?
   GITHUB_USERNAME = ENV["PJ_GITHUB_USERNAME"]?
 
   struct Repo
@@ -20,6 +20,7 @@ class PortfolioJson::Github
     property stargazers_count : Int32
 
     URI = "#{GITHUB_API_BASE}/users/#{GITHUB_USERNAME}/repos"
+
     def self.repos_of_user
       response = HTTP::Client.get(URI)
       Array(Repo).from_json(response.body)
