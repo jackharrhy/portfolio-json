@@ -17,10 +17,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install Deps.
-        run: |
-          shards install
-          apt update -y
-          apt install jq -y
+        run: shards install
 
       - name: Setup env. for cli.cr to run
         run: |
