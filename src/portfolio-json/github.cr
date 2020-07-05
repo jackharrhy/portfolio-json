@@ -4,7 +4,6 @@ require "json"
 class PortfolioJson::Github
   GITHUB_API_BASE = "https://api.github.com"
 
-  GITUB_TOKEN     = ENV["PJ_GITHUB_TOKEN"]?
   GITHUB_USERNAME = ENV["PJ_GITHUB_USERNAME"]?
 
   struct Repo

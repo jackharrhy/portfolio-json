@@ -22,8 +22,10 @@ jobs:
           apt update -y
           apt install jq -y
 
-      - name: Create output folder
-        run: mkdir output
+      - name: Setup env. for cli.cr to run
+        run: |
+          touch .env
+          mkdir output
 
       - name: Build portfolio.json to output folder
         run: crystal run src/cli.cr | jq > output/portfolio.json
