@@ -17,7 +17,9 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install Deps.
-        run: shards install
+        run:
+          - shards install
+          - apt install jq
 
       - name: Create output folder
         run: mkdir output
