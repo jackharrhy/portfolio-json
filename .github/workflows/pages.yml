@@ -19,8 +19,8 @@ jobs:
       - name: Install Deps.
         run: |
           shards install
-          sudo apt update -y
-          sudo apt install jq -y
+          apt update -y
+          apt install jq -y
 
       - name: Create output folder
         run: mkdir output
