@@ -7,4 +7,4 @@ require "./portfolio-json"
 
 portfolio = PortfolioJson::Portfolio.new
 
-p portfolio.to_json
+puts portfolio.to_json

@@ -1,0 +1,34 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install Deps.
+        run: shards install
+
+      - name: Create output folder
+        run: mkdir output
+
+      - name: Build portfolio.json to output folder
+        run: crystal run src/cli.cr | jq > output/portfolio.json
+        env:
+          PJ_GITHUB_USERNAME: jackharrhy
+
+      - name: Deploy portfolio.json
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
