@@ -1,0 +1,17 @@
+name: portfolio-json
+version: 0.1.0
+
+authors:
+  - Jack Arthur Harrhy <me@jackharrhy.com>
+
+targets:
+  portfolio-json:
+    main: src/portfolio-json.cr
+
+dependencies:
+  dotenv:
+    github: gdotdesign/cr-dotenv
+
+crystal: 0.35.1
+
+license: MIT
