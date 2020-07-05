@@ -23,6 +23,7 @@ jobs:
         run: |
           touch .env
           mkdir output
+          echo "<a href="./portfolio.json">./portfolio.json</a>" > ./output/index.html
 
       - name: Build portfolio.json to output folder
         run: sh ./build.sh
