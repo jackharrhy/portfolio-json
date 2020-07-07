@@ -10,6 +10,7 @@ class PortfolioJson::Github
     include JSON::Serializable
 
     property name : String
+    property description : String?
     property html_url : String
     property fork : Bool
     property created_at : Time
